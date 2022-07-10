@@ -9,8 +9,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+
+    position: 'absolute',
+    right: 20,
+    bottom: 0,
   },
-  iconTabRound: {
+  iconAdd: {
     width: 55,
     height: 55,
 
