@@ -1,6 +1,7 @@
 // External libraries
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
+import { useTheme } from 'styled-components/native'
 
 // Screens
 import List from '../../screens/List'
@@ -9,24 +10,22 @@ import Add from '../../screens/Add'
 import Search from '../../screens/Search'
 import Settings from '../../screens/Settings'
 
-// Styles
-import dark from '../../styles/themes/dark'
-
 const Drawer = createDrawerNavigator()
 
 function DrawerRoutes() {
+  const { colors } = useTheme()
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerTintColor: dark.colors.primary,
-        drawerActiveTintColor: dark.colors.primary,
+        headerTintColor: colors.primary,
+        drawerActiveTintColor: colors.primary,
         headerStyle: {
-          backgroundColor: dark.colors.backgroundColorItem,
+          backgroundColor: colors.backgroundColorItem,
         },
         drawerStyle: {
-          backgroundColor: dark.colors.backgroundColorItem,
+          backgroundColor: colors.backgroundColorItem,
         },
-        drawerInactiveTintColor: dark.colors.default,
+        drawerInactiveTintColor: colors.default,
       }}>
       <Drawer.Screen name="List" component={List} />
       <Drawer.Screen name="Edit" component={Edit} />

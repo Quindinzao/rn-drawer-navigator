@@ -1,22 +1,21 @@
 // External libraries
 import React from 'react'
-import { Text, View } from 'react-native'
 
 // Components
-import ButtonAdd from '../../components/ButtonAdd'
+import RoundTouchable from '../../components/RoundTouchable'
 
 // Styles
-import styles from './styles'
+import { Container, TextContainer } from './styles'
 
 const Add: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.textContainer}>Add</Text>
-      <ButtonAdd
+    <Container>
+      <TextContainer>Add</TextContainer>
+      <RoundTouchable
         activeOpacity={0.5}
         onPress={() => console.warn('Hello world')}
       />
-    </View>
+    </Container>
   )
 }
 
