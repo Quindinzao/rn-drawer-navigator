@@ -1,6 +1,6 @@
 // External libraries
 import React, { useContext } from 'react'
-import { Switch } from 'react-native'
+import { Switch, View } from 'react-native'
 
 // Components
 import PrimaryTouchable from '../../components/PrimaryTouchable'
@@ -20,22 +20,34 @@ const Settings: React.FC = () => {
 
   return (
     <Container>
+      <View>
+        <Row>
+          <TextContainer>User: </TextContainer>
+          <TextContainer>John Doe</TextContainer>
+        </Row>
+        <Row>
+          <TextContainer>E-mail: </TextContainer>
+          <TextContainer>johndoe@doe.com</TextContainer>
+        </Row>
+        <Row>
+          <TextContainer>Mode: </TextContainer>
+          <Switch
+            value={isLightMode}
+            onValueChange={toggleTheme}
+            trackColor={{ false: '#121214', true: '#FFFFFF' }}
+            thumbColor={'#FFB300'}
+          />
+        </Row>
+      </View>
+
       <Row>
-        <TextContainer>Mode: </TextContainer>
-        <Switch
-          value={isLightMode}
-          onValueChange={toggleTheme}
-          trackColor={{ false: '#121214', true: '#FFFFFF' }}
-          thumbColor={'#FFB300'}
+        <PrimaryTouchable
+          title="Sign Out"
+          optionType="default"
+          onPress={signOut}
+          opacity={0.7}
         />
       </Row>
-
-      <PrimaryTouchable
-        title="Sign Out"
-        optionType="default"
-        onPress={signOut}
-        opacity={0.7}
-      />
     </Container>
   )
 }

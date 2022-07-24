@@ -7,8 +7,6 @@ export const Container = styled.SafeAreaView`
   justify-content: space-between;
 
   padding: 0px;
-  padding-right: 24px;
-  padding-left: 24px;
 
   background-color: ${props => props.theme.colors.backgroundColor};
 `
@@ -20,12 +18,18 @@ export const Row = styled.View`
   justify-content: space-between;
   flex-direction: row;
 
-  margin-top: 12px;
+  margin-top: 24px;
+  padding-bottom: 6px;
+  padding-right: 24px;
+  padding-left: 24px;
+
+  /* border-bottom-width: 1px;
+  border-bottom-color: ${props => props.theme.colors.backgroundColorItem}; */
 `
 
 export const TextContainer = styled.Text`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 2.5px;
-  color: ${props => props.theme.colors.text};
+  color: ${props => props.theme.colors.default};
 `
