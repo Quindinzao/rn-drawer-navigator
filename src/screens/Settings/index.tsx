@@ -10,7 +10,7 @@ import { useAuth } from '../../contexts/Auth'
 import { ThemeContext, ThemeType } from '../../contexts/Theme'
 
 // Styles
-import { Container, TextContainer } from './styles'
+import { Container, Row, TextContainer } from './styles'
 
 const Settings: React.FC = () => {
   const { signOut } = useAuth()
@@ -20,13 +20,16 @@ const Settings: React.FC = () => {
 
   return (
     <Container>
-      <TextContainer>Settings</TextContainer>
-      <Switch
-        value={isLightMode}
-        onValueChange={toggleTheme}
-        trackColor={{ false: '#121214', true: '#FFFFFF' }}
-        thumbColor={'#FFB300'}
-      />
+      <Row>
+        <TextContainer>Mode: </TextContainer>
+        <Switch
+          value={isLightMode}
+          onValueChange={toggleTheme}
+          trackColor={{ false: '#121214', true: '#FFFFFF' }}
+          thumbColor={'#FFB300'}
+        />
+      </Row>
+
       <PrimaryTouchable
         title="Sign Out"
         optionType="default"
